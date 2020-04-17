@@ -27,6 +27,7 @@ bb_new <- function(
 
 # Optional: BitBar Metadata ----
 # Only needed if you want to share your menu item on BitBar's website. Feel free to delete.
+# BitBar's website: https://getbitbar.com
 
 # <bitbar.title>TITLE</bitbar.title>
 # <bitbar.version>v1.0</bitbar.version>
@@ -44,21 +45,25 @@ library(bitbaR)
 
 # BitBar ----
 
-bb_head() # Loads an icon and Refresh button for your BitBar.
+bb_head(\"\U0001f697\") # Loads an icon and Refresh button for your BitBar.
 
 bb_print(\"I am a menu line.\")
 
 bb_print(\"---\") # Makes a section line.
 bb_print(\"I am green!\", bb_attributes(color = \"green\"))
-bb_print(\"I am also green! | color=green\") # Same as above
+# bb_print(\"I am also green! | color=green\") # Same as above
 
 bb_print(\"---\")
-bb_print(\"I am Google.\", bb_attributes(URL = \"https://www.google.com/\"))
-bb_print(\"I am also Google. | href=https://www.google.com/\") # Same as above
+bb_print(\"I link to Google.\", bb_attributes(URL = \"https://www.google.com/\"))
+# bb_print(\"I am also Google. | href=https://www.google.com/\") # Same as above
 
 bb_print(\"---\")
 bb_print(\"Nested submenu using mtcars:\")
-bb_nest(mtcars, cyl, mpg) %>% # Creates a submenu based on a table's columns.
+mtcars %>%
+  rownames_to_column(\"cars\") %>%
+  mutate(menu_name = \"mtcars\") %>%
+  arrange(cyl, cars) %>%
+  bb_nest(menu_name, cyl, cars) %>% # Creates a submenu based on a table's columns.
   bb_print()
 "
 
