@@ -25,7 +25,7 @@ bb_new <- function(
 # In Terminal type 'which Rscript'. If the result is different than the path above, replace.
 # e.g. you might change it to #!/usr/bin/Rscript or #!/foo/bar/etc/Rscript
 
-# BitBar Metadata ----
+# Optional: BitBar Metadata ----
 # Only needed if you want to share your menu item on BitBar's website. Feel free to delete.
 
 # <bitbar.title>TITLE</bitbar.title>
@@ -37,27 +37,29 @@ bb_new <- function(
 # <bitbar.dependencies>R</bitbar.dependencies>
 
 # BitBar Initialize ----
-options(tidyverse.quiet = TRUE) # This keeps BitBar from printing out the standard Tidyverse output.
+options(tidyverse.quiet = TRUE) # This keeps BitBar from printing out the standard Tidyverse conflicts output.
 library(tidyverse, warn.conflicts = FALSE, quietly = TRUE)
 library(magrittr, warn.conflicts = FALSE, quietly = TRUE)
 library(bitbaR)
 
-# BitBar! ----
+# BitBar ----
+
 bb_head() # Loads an icon and Refresh button for your BitBar.
 
-bb_print(\"I am a menu line!\")
+bb_print(\"I am a menu line.\")
 
-bb_print(\"I am red!\", bb_attributes(color = \"red\"))
-bb_print(\"I am also red! | color=red\") # Same as above
-bb_print(\"I am grey. :( \")
+bb_print(\"---\") # Makes a section line.
+bb_print(\"I am green!\", bb_attributes(color = \"green\"))
+bb_print(\"I am also green! | color=green\") # Same as above
 
+bb_print(\"---\")
 bb_print(\"I am Google.\", bb_attributes(URL = \"https://www.google.com/\"))
 bb_print(\"I am also Google. | href=https://www.google.com/\") # Same as above
 
-bb_print(\"---\") # Makes a section line.
-
-bb_print(\"mtcars nest:\")
-bb_nest(mtcars, cyl, mpg) # Creates a submenu based on a table.
+bb_print(\"---\")
+bb_print(\"Nested submenu using mtcars:\")
+bb_nest(mtcars, cyl, mpg) %>% # Creates a submenu based on a table's columns.
+  bb_print()
 "
 
   BitBarFile <-
