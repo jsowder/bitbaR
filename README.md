@@ -1,7 +1,6 @@
 # bitbaR
  Mac Menus with R
  
- Example menu:
  ![Example menu created by bb_new()](example_menu.png "bitbaR Template Menu")
 
 First, [install Bitbar](https://github.com/matryer/bitbar/releases/download/v1.9.2/BitBar-v1.9.2.zip), an open source tool for creating Mac menus with any language. ([More information](https://getbitbar.com))
