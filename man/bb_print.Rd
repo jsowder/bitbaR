@@ -2,29 +2,16 @@
 % Please edit documentation in R/bb_print.R
 \name{bb_print}
 \alias{bb_print}
-\title{Print strings in BitBar fashion}
+\title{Print text to BitBar.}
 \usage{
-bb_print(..., nest = 0, sep = "", collapse = "")
+bb_print(...)
 }
 \arguments{
-\item{...}{What to print. Vectors are concatenated.}
-
-\item{nest}{Level of nesting Defaults to 0.}
-
-\item{sep}{What to seperate vectors by. Defaults to "".}
-
-\item{collapse}{What to collapse vectors by. Defaults to "".}
+\item{...}{What to print. Concatenates arguments without spaces.}
 }
 \value{
 Nothing
 }
 \description{
-I print, BitBar-style.
-}
-\examples{
-bb_print(nest = 1, c("this", "that"))
-bb_print(nest = 2, "this", "that")
-bb_print(nest = 3, c("this", "that"), "and the other")
-bb_print(nest = 4, c("2 + 2 = ", 2 + 2))
-
+Print text to BitBar.
 }
