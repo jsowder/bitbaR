@@ -8,8 +8,9 @@ First, [install Bitbar](https://github.com/matryer/bitbar/releases/download/v1.9
 Next, install bitbaR.
 ```R
 install.packages("devtools")
-devtools::install_github(jsowder/bitbaR)
+devtools::install_github("jsowder/bitbaR")
 ```
+
 Finally, create your menu.
 ```R
 bitbaR::bb_new("MyMenu", path = "path/to/your/bitbar/folder")
