@@ -1,0 +1,17 @@
+Package: bitbaR
+Title: Create Mac Menus in R
+Version: 0.0.0.9000
+Authors@R: 
+    person("Jacob",
+           "Sowder",
+           email = "jacobsowder@gmail.com",
+           role = c("aut", "cre"))
+Description: Create menu items for Mac in R using the open-source tool BitBar.
+License: `use_mit_license()`
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0
+Imports:
+  tidyverse,
+  rlang
